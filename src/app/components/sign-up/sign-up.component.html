@@ -1,0 +1,33 @@
+<div class="container" style="width: 500px;">
+    <div class="card card-register mx-auto mt-5">
+      <div class="card-header">Register an Account</div>
+      <div class="card-body">
+        <form>
+          <div class="form-group">
+            <div class="form-label-group">
+              <label>Email address</label>
+              <input type="email" class="form-control" placeholder="Email Address" #userEmail required>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label-group">
+              <label>Password</label>
+              <input type="password" class="form-control" placeholder="Password" #userPwd required>
+            </div>
+          </div>
+          <input type="button" class="btn btn-primary btn-block" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
+        </form>
+        <div class="text-center">
+          <span class="or"><span class="orInner">Or</span></span>
+        </div>
+        <button type="button" class="btn btn-default btn-block" (click)="authService.GoogleAuth()">
+          <i class="fab fa-google-plus-g"></i>
+          Log in with Google
+        </button>
+        <div class="text-center">
+          <a class="d-block small mt-3" routerLink="/sign-in">Login Page</a>
+          <a class="d-block small" routerLink="/forgot-password">Forgot Password?</a>
+        </div>
+      </div>
+    </div>
+  </div>
